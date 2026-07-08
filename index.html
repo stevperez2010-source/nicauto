@@ -567,6 +567,15 @@ h2 {
   background: #fff;
 }
 
+.contact-priority {
+  display: block;
+}
+
+.contact-priority .contact-info {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
 .quote-band {
   display: flex;
   align-items: center;
@@ -591,6 +600,7 @@ h2 {
 
 .contact-cards {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin-top: 24px;
 }
@@ -640,6 +650,19 @@ h2 {
   font-weight: 800;
 }
 
+.social-links .featured-social {
+  min-height: 58px;
+  padding: 14px 18px;
+  background: #1877f2;
+  font-size: 18px;
+}
+
+.social-links .featured-social small {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .social-links span {
   display: grid;
   place-items: center;
@@ -653,7 +676,7 @@ h2 {
 
 .mini-map {
   overflow: hidden;
-  margin-top: 22px;
+  margin-top: 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
 }
@@ -661,7 +684,7 @@ h2 {
 .mini-map iframe {
   display: block;
   width: 100%;
-  height: 210px;
+  height: 190px;
   border: 0;
 }
 
@@ -790,6 +813,7 @@ h2 {
   .split,
   .contact-section,
   .mission-band,
+  .contact-cards,
   .quick-section,
   .services-grid,
   .process-list,
@@ -877,10 +901,10 @@ h2 {
 
     <nav class="main-nav" aria-label="Navegacion principal">
       <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Ubicacion y redes</a>
       <a href="#buscar">Busco vehiculo</a>
+      <a href="#servicios">Servicios</a>
       <a href="#instalaciones">Instalaciones</a>
-      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
@@ -924,6 +948,57 @@ h2 {
       <strong>Abierto de lunes a sabado</strong>
       <span>8:00 AM - 5:00 PM</span>
       <a id="statusWhatsappLink" target="_blank" rel="noopener">Consultar disponibilidad</a>
+    </section>
+
+    <section class="contact-section contact-priority" id="contacto">
+      <div class="contact-info">
+        <p class="section-kicker">Ubicacion y redes</p>
+        <h2>Visitanos o sigue nuestras novedades</h2>
+        <p>
+          Encuentranos en Managua y revisa nuestras publicaciones, especialmente en Facebook,
+          donde compartimos mas contenido y novedades.
+        </p>
+
+        <div class="contact-cards">
+          <a class="contact-card" id="addressLink" target="_blank" rel="noopener">
+            <span class="icon">⌖</span>
+            <strong>Direccion</strong>
+            <small>Rotonda El Gueguense, 50 metros al sur, Managua, Nicaragua</small>
+          </a>
+          <a class="contact-card" id="phoneLink">
+            <span class="icon">☎</span>
+            <strong>Telefono / WhatsApp</strong>
+            <small id="phoneText">+505 8193 2071</small>
+          </a>
+          <a class="contact-card" id="emailLink">
+            <span class="icon">@</span>
+            <strong>Correo</strong>
+            <small id="emailText">nicautoadmon@gmail.com</small>
+          </a>
+        </div>
+
+        <div class="social-links" aria-label="Redes sociales">
+          <a class="featured-social" id="facebookLink" target="_blank" rel="noopener" aria-label="Facebook de Nicauto">
+            <span>f</span> Facebook
+            <small>Mas novedades</small>
+          </a>
+          <a id="instagramLink" target="_blank" rel="noopener" aria-label="Instagram de Nicauto">
+            <span>◎</span> Instagram
+          </a>
+          <a id="tiktokLink" target="_blank" rel="noopener" aria-label="TikTok de Nicauto">
+            <span>♪</span> TikTok
+          </a>
+        </div>
+
+        <div class="mini-map" aria-label="Mapa de ubicacion">
+          <iframe
+            title="Mapa de Nicauto"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=12.1368644,-86.2813004&z=17&output=embed">
+          </iframe>
+        </div>
+      </div>
     </section>
 
     <section class="section services-section compact-section" id="servicios">
@@ -1033,77 +1108,6 @@ h2 {
       </div>
     </section>
 
-    <section class="contact-section" id="contacto">
-      <div class="contact-info">
-        <p class="section-kicker">Contacto</p>
-        <h2>Visitanos o escribenos</h2>
-        <p>
-          Estamos listos para ayudarte a encontrar tu proximo vehiculo o evaluar el que deseas
-          entregar como parte de pago.
-        </p>
-
-        <div class="contact-cards">
-          <a class="contact-card" id="addressLink" target="_blank" rel="noopener">
-            <span class="icon">⌖</span>
-            <strong>Direccion</strong>
-            <small>Rotonda El Gueguense, 50 metros al sur, Managua, Nicaragua</small>
-          </a>
-          <a class="contact-card" id="phoneLink">
-            <span class="icon">☎</span>
-            <strong>Telefono / WhatsApp</strong>
-            <small id="phoneText">+505 8193 2071</small>
-          </a>
-          <a class="contact-card" id="emailLink">
-            <span class="icon">@</span>
-            <strong>Correo</strong>
-            <small id="emailText">nicautoadmon@gmail.com</small>
-          </a>
-        </div>
-
-        <div class="social-links" aria-label="Redes sociales">
-          <a id="facebookLink" target="_blank" rel="noopener" aria-label="Facebook de Nicauto">
-            <span>f</span> Facebook
-          </a>
-          <a id="instagramLink" target="_blank" rel="noopener" aria-label="Instagram de Nicauto">
-            <span>◎</span> Instagram
-          </a>
-          <a id="tiktokLink" target="_blank" rel="noopener" aria-label="TikTok de Nicauto">
-            <span>♪</span> TikTok
-          </a>
-        </div>
-
-        <div class="mini-map" aria-label="Mapa de ubicacion">
-          <iframe
-            title="Mapa de Nicauto"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=12.1368644,-86.2813004&z=17&output=embed">
-          </iframe>
-        </div>
-      </div>
-
-      <form class="contact-form" id="contactForm">
-        <label>
-          Nombre
-          <input type="text" name="name" autocomplete="name" required>
-        </label>
-        <label>
-          Telefono
-          <input type="tel" name="phone" autocomplete="tel" required>
-        </label>
-        <label>
-          Correo
-          <input type="email" name="email" autocomplete="email" required>
-        </label>
-        <label>
-          Mensaje
-          <textarea name="message" rows="5" required>Hola Nicauto, quiero informacion sobre vehiculos disponibles.</textarea>
-        </label>
-        <button class="btn btn-primary" type="submit">Enviar mensaje</button>
-        <p class="form-note" id="formNote" role="status"></p>
-      </form>
-    </section>
-
   </main>
 
   <footer class="site-footer">
@@ -1176,20 +1180,6 @@ document.getElementById("tiktokLink").href = business.tiktok;
 document.getElementById("heroWhatsappLink").href = `${whatsappUrl}?text=${encodeURIComponent("Hola Nicauto, quiero informacion sobre vehiculos disponibles.")}`;
 document.getElementById("statusWhatsappLink").href = `${whatsappUrl}?text=${encodeURIComponent("Hola Nicauto, quiero consultar disponibilidad de vehiculos.")}`;
 document.getElementById("floatingWhatsappLink").href = `${whatsappUrl}?text=${encodeURIComponent("Hola Nicauto, quiero informacion.")}`;
-
-document.getElementById("contactForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const form = event.currentTarget;
-  const data = new FormData(form);
-  const subject = encodeURIComponent(`Consulta web de ${data.get("name")}`);
-  const body = encodeURIComponent(
-    `Nombre: ${data.get("name")}\nTelefono: ${data.get("phone")}\nCorreo: ${data.get("email")}\n\nMensaje:\n${data.get("message")}`
-  );
-
-  document.getElementById("formNote").textContent = "Abriendo tu aplicacion de correo para enviar el mensaje.";
-  window.location.href = `mailto:${business.email}?subject=${subject}&body=${body}`;
-});
 
 document.getElementById("quickSearchForm").addEventListener("submit", (event) => {
   event.preventDefault();
