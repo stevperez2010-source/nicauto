@@ -1788,7 +1788,7 @@ const renderInventoryRows = (vehicles) => {
     const year = normalizeText(vehicle.anio || vehicle.ano || vehicle["año"]);
     const km = formatKm(vehicle.km || vehicle.kilometraje);
     const price = formatMoney(vehicle.precio);
-    const status = normalizeText(vehicle.estado) || "Disponible";
+    const status = "Disponible";
     const category = normalizeVehicleType(vehicle.tipo || vehicle.categoria);
     const title = getVehicleTitle(vehicle);
     const search = normalizeText(`${brand} ${model} ${year} ${km} ${price} ${status} ${category}`).toLowerCase();
