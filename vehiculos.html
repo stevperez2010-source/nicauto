@@ -1494,6 +1494,11 @@ const normalizeVehicleType = (value) => {
 
 const getVehicleTitle = (vehicle) => normalizeText(`${vehicle.marca || ""} ${vehicle.modelo || ""}`) || "Vehículo disponible";
 
+const isSoldVehicle = (vehicle) => {
+  const status = normalizeText(vehicle.estado).toLowerCase();
+  return status === "vendido" || status === "vendida" || status.includes("vendido");
+};
+
 const applyInventoryFilters = () => {
   const rows = document.querySelectorAll(".inventory-row");
   const activeFilter = document.querySelector(".vehicle-filter.is-active")?.dataset.filter || "todos";
@@ -1589,7 +1594,7 @@ const loadInventoryFromSupabase = async () => {
     const vehicles = (await response.json())
       .map((row) => row.data)
       .filter(Boolean)
-      .filter((vehicle) => normalizeText(vehicle.estado).toLowerCase() !== "vendido")
+      .filter((vehicle) => !isSoldVehicle(vehicle))
       .sort((first, second) => getVehicleTitle(first).localeCompare(getVehicleTitle(second), "es"));
 
     renderInventoryRows(vehicles);
